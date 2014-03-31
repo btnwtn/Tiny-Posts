@@ -4,9 +4,11 @@ TinyPosts::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  root 'post#index'
+  root 'posts#index'
 
-  resources :post
+  resource :session, only: [:new, :create, :destroy]
+  resources :users, only: [:new, :create]
+  resources :posts
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

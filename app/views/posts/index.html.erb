@@ -1,0 +1,13 @@
+<% content_for(:title, "Listing Posts") %>
+
+<h1><%= current_user.id %></h1>
+<% @posts.each do |post| %>
+	<div class="post-wrapper">
+		<div class="post-content">
+			<%= post.content  %>
+		</div>
+		<div class="post-author">
+			&mdash; <%= post.author %>
+		</div>
+	</div>
+<% end %>

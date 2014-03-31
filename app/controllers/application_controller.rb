@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
 
   def sign_in user
   	# encrypt the value of our cookie
-	cookies.signed[:user_id] =  user.id
+    cookies.signed[:user_id] =  user.id
   end
 
   def signed_in?

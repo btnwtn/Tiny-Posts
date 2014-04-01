@@ -19,6 +19,22 @@
             <h1><a href="#">Tiny Poster</a></h1>
           </li>
         </ul>
+
+        <section class="top-bar-section">
+          <ul class="right">
+            <% if signed_in? %>
+              <li class="has-dropdown">
+                <a href="#"><%= current_user.email %></a>
+                <ul class="dropdown">
+                  <li class="active"><%= link_to "New Post", new_post_path %></li>
+                  <li><%= link_to "Sign Out", session_path, method: :delete %></li>
+                </ul>
+              </li>
+            <% else %>
+              <li class="active"><%= link_to "Sign Up!", new_user_path %></li>
+            <% end %>
+          </ul>
+        </section>
       </nav>
     </div>
     <br />
@@ -26,10 +42,6 @@
       <div class="small-12">
         <%= yield %>
       </div>
-
-      <% if signed_in? %>
-        <%= link_to "Sign Out", session_path, method: :delete %> 
-      <% end %>
 
     <%= javascript_include_tag "application" %>
   </body>

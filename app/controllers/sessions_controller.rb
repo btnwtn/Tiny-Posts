@@ -8,7 +8,9 @@ class SessionsController < ApplicationController
 			sign_in(user)
 			redirect_to posts_path
 		else
-			redirect_to new_user_path
+			# invalid log in credentials
+			flash.now[:error] = "Unable to log in with the supplied credentials."
+			render :new
 		end
 	end
 

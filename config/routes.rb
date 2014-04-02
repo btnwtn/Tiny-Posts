@@ -10,7 +10,7 @@ TinyPosts::Application.routes.draw do
   resources :users, only: [:new, :create]
   resources :posts
 
-  get 'profile', to: 'users#show'
+  get 'profile/:id', to: 'users#show', as: 'user_profile'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

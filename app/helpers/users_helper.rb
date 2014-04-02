@@ -4,4 +4,9 @@ module UsersHelper
 		hashed_email = Digest::MD5.hexdigest(current_user.email)
 		"http://www.gravatar.com/avatar/#{hashed_email}?s=#{size}"
 	end
+
+	def gravatar_url_for(email, size=20)
+		hashed_email = Digest::MD5.hexdigest(email)
+		"http://www.gravatar.com/avatar/#{hashed_email}?s=#{size}"
+	end
 end

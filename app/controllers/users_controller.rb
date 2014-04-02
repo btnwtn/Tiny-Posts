@@ -14,6 +14,9 @@ class UsersController < ApplicationController
 		end
 	end
 
+	def show
+	end
+
 	private
 		# only allow content and author data to be submitted.
 		def users_parameters

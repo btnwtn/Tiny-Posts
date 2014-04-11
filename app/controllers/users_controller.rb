@@ -25,6 +25,6 @@ class UsersController < ApplicationController
 	private
 		# only allow content and author data to be submitted.
 		def users_parameters
-			params.require(:user).permit(:email, :password, :password_confirmation)
+			params.require(:user).permit(:email, :username, :password, :password_confirmation)
 		end
 end

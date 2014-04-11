@@ -14,7 +14,6 @@ class PostsController < ApplicationController
 	# POST /post
 	def create
 		@post = Posts.new(posts_parameters)
-		@post.author = current_user.email
 		@post.user_id = current_user.id
 
 		if @post.save
@@ -27,6 +26,6 @@ class PostsController < ApplicationController
 	private
 		# only allow content and author data to be submitted.
 		def posts_parameters
-			params.require(:posts).permit(:content, :author)
+			params.require(:posts).permit(:content)
 		end
 end

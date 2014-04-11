@@ -9,7 +9,9 @@
 		<% end %>
 		<div>
 			<%= form.label :email %>
-			<%= form.text_field :email %> 
+			<%= form.email_field :email %> 
+			<%= form.label :username %>
+			<%= form.text_field :username %> 
 			<%= form.label :password %>
 			<%= form.password_field :password %>
 			<%= form.label :password_confirmation %>

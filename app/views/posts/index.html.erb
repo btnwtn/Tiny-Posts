@@ -6,8 +6,8 @@
 			<%= post.content  %>
 		</div>
 		<div class="post-author">
-			<% author_object = User.find_by_email(post.author) %>
-			&mdash; <%= link_to post.author, user_profile_path(author_object) %>
+			<% author = User.find(post.user_id) %>
+			&mdash; <%= link_to author.username, user_profile_path(author) %>
 		</div>
 	</div>
 <% end %>

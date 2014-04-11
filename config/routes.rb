@@ -4,7 +4,7 @@ TinyPosts::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  root 'posts#index'
+  root 'static#landing'
 
   resource :session, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create]

@@ -7,7 +7,7 @@ TinyPosts::Application.routes.draw do
   root 'static#landing'
 
   resource :session, only: [:new, :create, :destroy]
-  resources :users, only: [:new, :create]
+  resources :users, only: [:new, :create, :edit, :update]
   resources :posts
 
   get 'profile/:id', to: 'users#show', as: 'user_profile'
